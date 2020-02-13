@@ -22,7 +22,7 @@ libraryDependencies ++= {
   )
 }
 
-lazy val databaseUrl = "jdbc:mysql://localhost/tpf?characterEncoding=UTF-8&nullNamePatternMatchesAll=true"
+lazy val databaseUrl = "jdbc:mysql://database:3306/tpf?characterEncoding=UTF-8&nullNamePatternMatchesAll=true"
 lazy val databaseUser = "tpf"
 lazy val databasePassword = "tpf"
 

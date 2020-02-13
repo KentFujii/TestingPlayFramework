@@ -1,9 +1,17 @@
 version: '3'
 services:
+  app:
+    build: .
+    tty: true
+    volumes:
+      - .:/TestingPlayFramework
+    ports:
+      - 9000:9000
+    command: sbt run
+    depends_on:
+      - database
   database:
     image: "mysql:5.6"
-    volumes:
-      - db_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tpf
       MYSQL_DATABASE: tpf
@@ -13,5 +21,3 @@ services:
       - 3306:3306
     expose:
       - 3306
-volumes:
-    db_data:
